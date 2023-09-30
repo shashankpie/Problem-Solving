@@ -1,3 +1,5 @@
+# Better Approach - O(n^2)
+
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         st = set()
