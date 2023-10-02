@@ -18,3 +18,21 @@ class Solution:
             if len(res) == 2:
                 break
         return res
+
+# Better Solution
+# Time complexity - O(n)
+# Space complexity - O(n)
+
+class Solution:
+    def majorityElement(self, nums: List[int]) -> List[int]:
+        hashmap = {}
+        for num in nums:
+            if num in hashmap:
+                hashmap[num] += 1
+            else:
+                hashmap[num] = 1
+        res = []
+        for num, count in hashmap.items():
+            if count > (len(nums) // 3):
+                res.append(num)
+        return res
