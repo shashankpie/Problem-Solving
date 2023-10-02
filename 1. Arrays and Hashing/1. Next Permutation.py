@@ -1,3 +1,5 @@
+# Problem link: https://leetcode.com/problems/next-permutation/description/
+
 class Solution:
     def nextPermutation(self, nums: List[int]) -> None:
         n = len(nums)
