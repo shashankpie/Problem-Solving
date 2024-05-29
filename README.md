@@ -1,6 +1,6 @@
 # Problem-Solving
 
-## List of problems that I solve everyday.
+## List of problems that I solve randomly
 
 ### Data structures and algorithms
 ### Striver's SDE sheet
