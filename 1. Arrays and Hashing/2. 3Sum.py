@@ -21,26 +21,28 @@ class Solution:
 
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        nums.sort()
         ans = []
+        nums.sort()
         for i in range(len(nums)):
-            if(i != 0 and nums[i-1] == nums[i]):
-                continue
+            if (i != 0 and nums[i] == nums[i-1]):
+                continue # if preceding number and current number is same, then increment the i and don't go below
             j = i + 1
             k = len(nums) - 1
-            while(j < k):
+            while (j < k):
                 total_sum = nums[i] + nums[j] + nums[k]
-                if(total_sum < 0):
+                if (total_sum < 0):
                     j += 1
-                elif(total_sum > 0):
+                elif (total_sum > 0):
                     k -= 1
                 else:
+                    # We found the triplets
                     temp = [nums[i], nums[j], nums[k]]
                     ans.append(temp)
                     j += 1
                     k -= 1
-                    while(j < k and nums[j] == nums[j-1]):
+                    # If the preceding number and current number is same
+                    while (j < k and nums[j] == nums[j-1]):
                         j += 1
-                    while(j < k and nums[k] == nums[k+1]):
+                    while (j < k and nums[k] == nums[k+1]):
                         k -= 1
         return ans
